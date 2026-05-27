@@ -1,0 +1,244 @@
+/* =========================================================
+   ABOUT PAGE — Specific Styles
+   ========================================================= */
+
+/* ── Page Hero ─────────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  padding: 10rem 0 5rem;
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(233,85,48,0.18), transparent 70%),
+    var(--bg);
+  z-index: 0;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.page-hero-inner .section-title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  margin: 0.5rem 0 1rem;
+}
+
+/* ── Mission ───────────────────────────────────────────── */
+.mission {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  background: var(--surface);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.mission-visual {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: visible;
+}
+.mission-visual img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.mission-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(233,85,48,0.35);
+}
+.badge-big {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.mission-badge span:last-child { font-size: 0.78rem; opacity: 0.85; }
+
+.mission-text p {
+  font-size: 0.98rem;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* ── Values ────────────────────────────────────────────── */
+.values {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.value-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(233,85,48,0.35);
+}
+
+.value-icon {
+  width: 52px; height: 52px;
+  background: rgba(233,85,48,0.1);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.value-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.value-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+/* ── Stats Bar ─────────────────────────────────────────── */
+.stats-bar {
+  background: var(--accent);
+  padding: 3rem 0;
+}
+
+.stats-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.stats-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  line-height: 1;
+}
+.stats-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.stats-divider {
+  width: 1px;
+  height: 56px;
+  background: rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+
+/* ── Why Us ────────────────────────────────────────────── */
+.why-us {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  background: var(--surface);
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.why-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.why-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  color: rgba(233,85,48,0.25);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 40px;
+}
+
+.why-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.why-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+.why-us-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+.why-us-img img {
+  width: 100%; height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.why-us-img:hover img { transform: scale(1.04); }
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .mission-grid,
+  .why-us-grid { grid-template-columns: 1fr; }
+  .why-us-img { order: -1; }
+  .why-us-img img { height: 300px; }
+  .mission-badge { right: 0.5rem; bottom: -1rem; }
+}
+
+@media (max-width: 640px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .stats-inner  { flex-direction: column; }
+  .stats-divider { width: 80px; height: 1px; }
+}
