@@ -34,7 +34,7 @@
           <img src="/Baseline/Assets/Images/HomestreamPlus01.1.1.png" alt="Homestream Plus" />
         </a>
         <div class="nav-links">
-          <a href="index.html">Home</a>
+          <a href="/Baseline/index.html">Home</a>
           <a href="/Baseline/Assets/Pages/services.html">Services</a>
           <a href="/Baseline/Assets/Pages/about.html">About</a>
           <a href="/Baseline/Assets/Pages/contact.html" class="active">Contact</a>
@@ -146,52 +146,92 @@
         <h3 class="form-title">Send Us a Message</h3>
         <p class="form-sub">Fill in your details and we'll get back to you shortly.</p>
 
-        <form action="https://formspree.io/f/xbdbpnad" method="POST" class="contact-form" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fullName">Full Name <span class="req">*</span></label>
-              <input type="text" id="fullName" name="fullName" placeholder="e.g. John Mukasa" required />
-              <span class="field-error" id="nameError"></span>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number <span class="req">*</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="+256 700 000 000" required />
-              <span class="field-error" id="phoneError"></span>
-            </div>
-          </div>
+       <form action="https://formspree.io/f/xbdbpnad" method="POST" class="contact-form" id="contactForm" novalidate>
+  <input type="hidden" name="_next" value="https://homestream-plus.lovestoblog.com" />
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" />
-          </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="fullName">Full Name <span class="req">*</span></label>
+      <input type="text" id="fullName" name="fullName" placeholder="e.g. John Mukasa" required />
+      <span class="field-error" id="nameError"></span>
+    </div>
+    
+    <div class="form-group">
+      <label for="phone">Phone Number <span class="req">*</span></label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        placeholder="e.g. 256700000000" 
+        minlength="10" 
+        maxlength="13" 
+        pattern="[0-9]{10,13}" 
+        title="Phone number must be between 10 and 13 digits only." 
+        required 
+      />
+      <span class="field-error" id="phoneError"></span>
+    </div>
+  </div>
 
-          <div class="form-group">
-            <label for="subject">I'm interested in <span class="req">*</span></label>
-            <select id="subject" name="subject" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="individual">Individual Plan</option>
-              <option value="family">Family Plan</option>
-              <option value="custom">Custom Package</option>
-              <option value="support">Technical Support</option>
-              <option value="other">Other Inquiry</option>
-            </select>
-            <span class="field-error" id="subjectError"></span>
-          </div>
+  <div class="form-group">
+    <label for="country">Country <span class="req">*</span></label>
+    <select id="country" name="country" required>
+      <option value="" disabled selected>Select your country</option>
+      
+      <optgroup label="East Africa">
+        <option value="Burundi">Burundi</option>
+        <option value="DR Congo">DR Congo</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Rwanda">Rwanda</option>
+        <option value="Somalia">Somalia</option>
+        <option value="South Sudan">South Sudan</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Uganda">Uganda</option>
+      </optgroup>
+      
+      <optgroup label="Gulf States">
+        <option value="Bahrain">Bahrain</option>
+        <option value="Kuwait">Kuwait</option>
+        <option value="Oman">Oman</option>
+        <option value="Qatar">Qatar</option>
+        <option value="Saudi Arabia">Saudi Arabia</option>
+        <option value="UAE">United Arab Emirates</option>
+      </optgroup>
+    </select>
+    <span class="field-error" id="countryError"></span>
+  </div>
 
-          <div class="form-group">
-            <label for="message">Message <span class="req">*</span></label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us what you need — your location, device type, any questions..." required></textarea>
-            <span class="field-error" id="messageError"></span>
-          </div>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" />
+  </div>
 
-          <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
-            <span id="btnText">Send Message</span>
-            <i class="fas fa-paper-plane" id="btnIcon"></i>
-          </button>
+  <div class="form-group">
+    <label for="subject">I'm interested in <span class="req">*</span></label>
+    <select id="subject" name="subject" required>
+      <option value="" disabled selected>Select an option</option>
+      <option value="individual">Individual Plan</option>
+      <option value="family">Family Plan</option>
+      <option value="custom">Custom Package</option>
+      <option value="support">Technical Support</option>
+      <option value="other">Other Inquiry</option>
+    </select>
+    <span class="field-error" id="subjectError"></span>
+  </div>
 
-          <!-- Success / Error feedback -->
-          <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
-        </form>
+  <div class="form-group">
+    <label for="message">Message <span class="req">*</span></label>
+    <textarea id="message" name="message" rows="5" placeholder="Tell us what you need — your location, device type, any questions..." required></textarea>
+    <span class="field-error" id="messageError"></span>
+  </div>
+
+  <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
+    <span id="btnText">Send Message</span>
+    <i class="fas fa-paper-plane" id="btnIcon"></i>
+  </button>
+
+  <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
+</form>
       </div>
 
     </div>
@@ -258,5 +298,85 @@
 
   <script src="/Baseline/Assets/JS/main.js"></script>
   <script src="/Baseline/Assets/JS/contact.js"></script>
+  <script src="">
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+  // Prevent standard form tracking/submission behavior
+  event.preventDefault();
+
+  const form = event.target;
+  const phoneInput = document.getElementById('phone');
+  const phoneError = document.getElementById('phoneError');
+  const feedback = document.getElementById('formFeedback');
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+
+  // Clear previous errors
+  phoneError.textContent = '';
+  feedback.textContent = '';
+  feedback.className = 'form-feedback';
+
+  // Extract digits only to accurately test lengths
+  const pureDigits = phoneInput.value.replace(/\D/g, '');
+
+  // Custom validation rule for phone length
+  if (pureDigits.length < 10 || pureDigits.length > 13) {
+    phoneError.textContent = 'Phone number must be between 10 and 13 digits.';
+    phoneInput.focus();
+    return; // Halt form processing
+  }
+
+  // Use standard browser validation checks for the rest of the fields
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  // Visual cues: Let the user know it is sending
+  submitBtn.disabled = true;
+  btnText.textContent = 'Sending...';
+
+  // Construct data object to dispatch to Formspree
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      feedback.className = 'form-feedback success';
+      feedback.textContent = 'Message sent successfully! Redirecting...';
+      
+      // Delay redirection slightly so they see the success response
+      setTimeout(() => {
+        window.location.href = 'https://homestream-plus.lovestoblog.com';
+      }, 1500);
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          feedback.textContent = data['errors'].map(error => error['message']).join(', ');
+        } else {
+          feedback.textContent = 'Oops! There was a problem submitting your form.';
+        }
+        feedback.className = 'form-feedback error';
+        resetButton();
+      });
+    }
+  })
+  .catch(error => {
+    feedback.textContent = 'Oops! There was a problem submitting your form.';
+    feedback.className = 'form-feedback error';
+    resetButton();
+  });
+
+  function resetButton() {
+    submitBtn.disabled = false;
+    btnText.textContent = 'Send Message';
+  }
+});
+  </script>
 </body>
 </html>
