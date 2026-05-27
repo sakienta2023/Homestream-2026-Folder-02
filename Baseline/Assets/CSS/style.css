@@ -131,12 +131,48 @@ ul { list-style: none; }
 }
 
 /* Logo */
+
+/* Base styles for the logo container */
+.nav-logo {
+  display: inline-block; /* Ensures the wrapper fits the image dimensions */
+  border: 2px solid rgba(0, 123, 255, 0.5); /* A semi-transparent base border */
+  border-radius: 8px; /* Optional: rounds the corners of the border/glow */
+  padding: 4px; /* Optional: space between the logo and the glowing border */
+  
+  /* The initial glow effect */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); 
+  
+  /* Smooth transition between states */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Glow effect on hover */
+.nav-logo:hover {
+  border-color: rgba(0, 123, 255, 1); /* Brightens the solid border */
+  
+  /* Expands and intensifies the glow */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.8), 
+              0 0 30px rgba(0, 123, 255, 0.4);
+              
+  transform: scale(1.02); /* Optional: slight pop-out effect */
+}
+
+/* Ensures the image inside scales nicely and respects radius */
+.nav-logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px; 
+}
+
 .nav-logo img {
   height: 54px;
   width: auto;
   transition: transform var(--transition);
 }
 .nav-logo img:hover { transform: scale(0.96); }
+
+
 
 /* Desktop links */
 .nav-links {
