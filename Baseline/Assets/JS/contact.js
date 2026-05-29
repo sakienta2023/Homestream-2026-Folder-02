@@ -104,31 +104,25 @@ document.addEventListener('DOMContentLoaded', () => {
     btnText.textContent = 'Sending…';
     btnIcon.className = 'fas fa-spinner fa-spin';
 
-    /* 
-      NOTE FOR DEVELOPER:
-      Replace the block below with your real form submission logic.
-      Options: Formspree, EmailJS, a backend endpoint, etc.
+    /* Real Formspree AJAX Submission */
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-      Example with Formspree:
-        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            name: fields.fullName.value,
-            phone: fields.phone.value,
-            email: fields.email.value,
-            subject: fields.subject.value,
-            message: fields.message.value,
-          })
-        });
-        if (res.ok) { showSuccess(); } else { showError(); }
-    */
-
-    /* Simulated submission (replace with real API call above) */
-    await new Promise(r => setTimeout(r, 1400));
-
-    /* ── On success ── */
-    showSuccess();
+      if (response.ok) {
+        showSuccess();
+      } else {
+        showError();
+      }
+    } catch (error) {
+      console.error('Form submission network error:', error);
+      showError();
+    }
   });
 
   function showSuccess() {

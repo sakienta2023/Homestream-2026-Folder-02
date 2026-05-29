@@ -305,6 +305,46 @@ ul { list-style: none; }
 }
 
 .footer-brand img { height: 48px; margin-bottom: 1rem; }
+
+/* Base styles for the Footer logo container */
+.footer-brand img {
+  display: inline-block; /* Ensures the wrapper fits the image dimensions */
+  border: 2px solid rgba(0, 123, 255, 0.5); /* A semi-transparent base border */
+  border-radius: 8px; /* Optional: rounds the corners of the border/glow */
+  padding: 4px; /* Optional: space between the logo and the glowing border */
+  
+  /* The initial glow effect */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); 
+  
+  /* Smooth transition between states */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Glow effect on hover */
+.footer-brand img:hover {
+  border-color: rgba(0, 123, 255, 1); /* Brightens the solid border */
+  
+  /* Expands and intensifies the glow */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.8), 
+              0 0 30px rgba(0, 123, 255, 0.4);
+              
+  transform: scale(1.02); /* Optional: slight pop-out effect */
+}
+
+/* Ensures the image inside scales nicely and respects radius */
+.footer-brand img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px; 
+} /*The above styles create a glowing effect around the logo image in the footer, similar to the one in the header. The glow intensifies on hover, and the image slightly scales down for a subtle interactive feel.*/
+
+.footer-brand img {
+  height: 54px;
+  width: auto;
+  transition: transform var(--transition);
+} /* Counter-part to the Footer logo, this one scales down on hover to create a distinct interaction while maintaining the glowing effect. */
+
 .footer-brand p { color: var(--muted); font-size: 0.9rem; max-width: 280px; }
 
 .footer-col h4 {
