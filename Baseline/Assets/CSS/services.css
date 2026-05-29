@@ -265,6 +265,12 @@
   .faq-actions { justify-content: center; }
 }
 
+@media (max-width: 768px) {
+  .page-hero {
+  text-align: center;
+}
+}
+
 @media (max-width: 480px) {
   .categories-grid { grid-template-columns: 1fr 1fr; }
   .steps-grid { flex-direction: column; align-items: stretch; }

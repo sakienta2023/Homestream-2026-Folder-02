@@ -40,6 +40,8 @@
   gap: 3rem;
   padding-top: 3rem;
   padding-bottom: 6rem;
+  align-items: center;
+  text-align: center;  /* updated 290526_1709 */
 }
 
 .hero-content {
@@ -69,7 +71,7 @@
 .hero-sub {
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   color: rgba(232,228,223,0.75);
-  max-width: 520px;
+  max-width: 760px; /* updated 290526_1709 */
   margin-bottom: 2rem;
 }
 
@@ -77,6 +79,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center; /* updated 290526_1709 */
 }
 
 /* Stat badges */

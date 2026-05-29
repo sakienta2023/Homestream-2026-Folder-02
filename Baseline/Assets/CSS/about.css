@@ -237,6 +237,12 @@
   .mission-badge { right: 0.5rem; bottom: -1rem; }
 }
 
+@media (max-width: 768px) {
+  .page-hero {
+  text-align: center;
+}
+}
+
 @media (max-width: 640px) {
   .values-grid { grid-template-columns: 1fr; }
   .stats-inner  { flex-direction: column; }

@@ -333,3 +333,9 @@
   .form-row { grid-template-columns: 1fr; }
   .contact-form-wrap { padding: 1.75rem 1.25rem; }
 }
+
+@media (max-width: 768px) {
+  .page-hero {
+  text-align: center;
+}
+}
